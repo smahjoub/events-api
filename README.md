@@ -10,7 +10,7 @@ go build -o ./bin/main
 
 ## How to test
 ```shell script
-go test -v -covermode=count -coverprofile=./bin/coverage.out
+go test -v server.go main.go handlers_test.go  -covermode=count  -coverprofile=./bin/coverage.out
 ```
 
 ## Initial Structure
