@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+
+  app:
+    container_name: events_api
+    build: .
+    ports:
+      - 8080:8080
+    restart: on-failure
+    environment:
+      PORT: 8080
+      DB_CONN: "postgres://user:password@db:5432/db?sslmode=disable"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    links:
+      - db
+
+  db:
+    image: postgres
+    container_name: events_db
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: "user"
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_DB: "db"
+      TZ: 'UTC'
+      PGTZ: 'UTC'
