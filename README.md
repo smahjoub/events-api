@@ -5,7 +5,6 @@ go run github.com/smahjoub/events-api
 or 
 ```shell script
 go build -o ./bin/main
-./bin/main
 ```
 
 ## How to test
