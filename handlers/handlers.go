@@ -18,7 +18,7 @@ type IEventHandler interface {
 type handler struct {
 }
 
-// NewEventHandler return current IEventHandler implemtation
+// NewEventHandler return current IEventHandler implementation
 func NewEventHandler() IEventHandler {
 	return &handler{}
 }
